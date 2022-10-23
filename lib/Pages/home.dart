@@ -10,7 +10,6 @@ class Home extends StatelessWidget {
     var height = MediaQuery.of(context).size.height;
 
     return Row(mainAxisAlignment: MainAxisAlignment.end,
-
         // child: Center(
         children: [
           ClipPath(

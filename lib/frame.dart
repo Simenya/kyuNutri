@@ -23,7 +23,7 @@ class _FrameState extends State<Frame> {
           appBar: PreferredSize(
               preferredSize: Size(screenSize.width, 60), child: const Navbar()),
         ),
-        screens[3],
+        screens[2],
       ],
     );
   }

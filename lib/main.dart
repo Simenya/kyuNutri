@@ -5,7 +5,7 @@ import 'frame.dart';
 
 void main() => runApp(MaterialApp(
         debugShowCheckedModeBanner: true,
-        initialRoute: '/signup',
+        initialRoute: '/frame',
         routes: {
           '/frame': (context) => const Frame(),
           '/': (context) => const Login(),

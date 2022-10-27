@@ -67,6 +67,11 @@ flutter:
   assets:
     - first.jpg
     - topview.jpg
+    - dishes-1.png
+    - dishes-2.png
+    - dishes-3.png
+    - dishes-4.png
+    - dishes-5.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

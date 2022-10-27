@@ -9,18 +9,77 @@ class Menu extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
 
-    return Row(mainAxisAlignment: MainAxisAlignment.end,
-        // child: Center(
-        children: [
-          ClipPath(
-              clipper: MyClipPath(),
-              child: Container(
-                color: const Color.fromRGBO(255, 180, 0, 1),
-                height: height,
-                width: width / 1.7,
-                // ),
-              ))
-        ]);
+    return Stack(children: [
+      Padding(
+        padding: EdgeInsets.only(left: width - width / 1.7),
+        child: ClipPath(
+            clipper: MyClipPath(),
+            child: Container(
+              color: const Color.fromRGBO(255, 180, 0, 1),
+              height: height,
+              width: width / 1.7,
+              // ),
+            )),
+      ),
+      Center(
+          child: Container(
+        height: height - 200,
+        width: width - 200,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          color: const Color.fromRGBO(0, 0, 0, 0.5),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(30.0),
+          child: Expanded(
+            child: GridView.count(
+              crossAxisSpacing: 20.0,
+              mainAxisSpacing: 20.0,
+              crossAxisCount: 3,
+              childAspectRatio: 1 / 0.64,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ))
+    ]);
   }
 }
 

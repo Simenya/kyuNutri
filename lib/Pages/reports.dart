@@ -52,7 +52,7 @@ class Reports extends StatelessWidget {
                             child: GridView.count(
                               crossAxisSpacing: 20.0,
                               crossAxisCount: 3,
-                              childAspectRatio: 1 / 1.74,
+                              childAspectRatio: 1 / 1.7,
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
@@ -61,17 +61,59 @@ class Reports extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    color: Colors.white,
-                                  ),
-                                ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                      // color: Colors.black,
+                                    ),
+                                    child: Expanded(
+                                        child: GridView.count(
+                                      mainAxisSpacing: 20.0,
+                                      crossAxisCount: 1,
+                                      childAspectRatio: 1 / 0.8,
+                                      children: [
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ))),
                                 Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    color: Colors.white,
-                                  ),
-                                ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                      // color: Colors.black,
+                                    ),
+                                    child: Expanded(
+                                        child: GridView.count(
+                                      mainAxisSpacing: 20.0,
+                                      crossAxisCount: 1,
+                                      childAspectRatio: 1 / 0.8,
+                                      children: [
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ],
+                                    ))),
                               ],
                             ),
                           )

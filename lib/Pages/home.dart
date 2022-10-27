@@ -9,18 +9,116 @@ class Home extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
 
-    return Row(mainAxisAlignment: MainAxisAlignment.end,
-        // child: Center(
-        children: [
-          ClipPath(
-              clipper: MyClipPath(),
-              child: Container(
-                color: const Color.fromRGBO(255, 180, 0, 1),
-                height: height,
-                width: width / 1.7,
-                // ),
-              ))
-        ]);
+    return Stack(children: [
+      Padding(
+        padding: EdgeInsets.only(left: width - width / 1.7),
+        child: ClipPath(
+            clipper: MyClipPath(),
+            child: Container(
+              color: const Color.fromRGBO(255, 180, 0, 1),
+              height: height,
+              width: width / 1.7,
+              // ),
+            )),
+      ),
+      Center(
+        child: Container(
+          // color: const Color.fromRGBO(255, 255, 255, 1),
+          height: height - 200,
+          width: width - 200,
+          child: Padding(
+            padding: const EdgeInsets.all(30.0),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                      height: 340.0,
+                      width: 450.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        color: const Color.fromRGBO(200, 200, 200, 0.3),
+                      ),
+                      child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Text(
+                                      'Healthy ',
+                                      style: TextStyle(
+                                        color: Color.fromRGBO(255, 180, 0, 1),
+                                        fontSize: 40.0,
+                                        fontWeight: FontWeight.w800,
+                                        decoration: TextDecoration.none,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Meals ',
+                                      style: TextStyle(
+                                        color: Color.fromRGBO(0, 0, 0, 1),
+                                        fontSize: 40.0,
+                                        fontWeight: FontWeight.w800,
+                                        decoration: TextDecoration.none,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Text(
+                                      'for a healthy ',
+                                      style: TextStyle(
+                                        color: Color.fromRGBO(0, 0, 0, 1),
+                                        fontSize: 40.0,
+                                        fontWeight: FontWeight.w800,
+                                        decoration: TextDecoration.none,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Life ',
+                                      style: TextStyle(
+                                        color: Color.fromRGBO(20, 255, 10, 1),
+                                        fontSize: 40.0,
+                                        fontWeight: FontWeight.w800,
+                                        decoration: TextDecoration.none,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 20.0),
+                                SizedBox(
+                                  height: 40.0,
+                                  child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(18.0),
+                                        ),
+                                        backgroundColor: const Color.fromRGBO(
+                                            255, 180, 0, 1),
+                                      ),
+                                      onPressed: () {},
+                                      child: const Text(
+                                        'Create Daily Menu',
+                                        style: TextStyle(fontSize: 23.0),
+                                      )),
+                                ),
+                              ]))),
+                  const CircleAvatar(
+                      radius: 220.0,
+                      backgroundColor: Colors.white24,
+                      backgroundImage: AssetImage('assets/dishes-1.png')),
+                ]),
+          ),
+
+          // ),
+        ),
+      )
+    ]);
   }
 }
 

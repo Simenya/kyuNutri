@@ -25,8 +25,9 @@ class About extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const CircleAvatar(
-                      radius: 120.0,
-                    ),
+                        radius: 140.0,
+                        backgroundColor: Colors.white24,
+                        backgroundImage: AssetImage('assets/dishes-5.png')),
                     Column(children: const [
                       Text("Cafe Mgt Sys",
                           style: TextStyle(

@@ -72,6 +72,12 @@ flutter:
     - dishes-3.png
     - dishes-4.png
     - dishes-5.png
+    - first.png
+    - second.png
+    - third.png
+    - fourth.png
+    - fifth.png
+    - edible.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

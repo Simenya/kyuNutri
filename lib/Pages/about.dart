@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// About Widget
 class About extends StatefulWidget {
   const About({super.key});
 
@@ -69,7 +70,7 @@ class _AboutState extends State<About> {
                         style: TextStyle(
                           decoration: TextDecoration.none,
                           fontSize: 20.0,
-                          color: Colors.black,
+                          color: Color.fromRGBO(20, 255, 10, 1),
                         )),
                   ],
                 ),

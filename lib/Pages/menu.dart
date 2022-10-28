@@ -14,29 +14,29 @@ class _MenuState extends State<Menu> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
 
-    return Stack(children: [
-      Padding(
-        padding: EdgeInsets.only(left: width - width / 1.7),
-        child: ClipPath(
-            clipper: MyClipPath(),
-            child: Container(
-              color: const Color.fromRGBO(255, 180, 0, 1),
-              height: height,
-              width: width / 1.7,
-              // ),
-            )),
-      ),
-      Center(
-          child: Container(
-        height: height - 200,
-        width: width - 200,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-          color: const Color.fromRGBO(0, 0, 0, 0.5),
+    return Material(
+      child: Stack(children: [
+        Padding(
+          padding: EdgeInsets.only(left: width - width / 1.7),
+          child: ClipPath(
+              clipper: MyClipPath(),
+              child: Container(
+                color: const Color.fromRGBO(255, 180, 0, 1),
+                height: height,
+                width: width / 1.7,
+                // ),
+              )),
         ),
-        child: Padding(
+        Center(
+            child: Container(
+          height: height - 200,
+          width: width - 200,
           padding: const EdgeInsets.all(30.0),
-          child: Expanded(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            color: const Color.fromRGBO(0, 0, 0, 0.5),
+          ),
+          child: SafeArea(
             child: GridView.count(
               crossAxisSpacing: 20.0,
               mainAxisSpacing: 20.0,
@@ -82,9 +82,9 @@ class _MenuState extends State<Menu> {
               ],
             ),
           ),
-        ),
-      ))
-    ]);
+        ))
+      ]),
+    );
   }
 }
 

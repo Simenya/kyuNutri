@@ -29,16 +29,16 @@ class _HomeState extends State<Home> {
       Center(
         child: SizedBox(
           // color: const Color.fromRGBO(255, 255, 255, 1),
-          height: height - 200,
+          height: height - 180,
           width: width - 200,
           child: Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(20.0),
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                       height: 340.0,
-                      width: 450.0,
+                      width: 550.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20.0),
                         color: const Color.fromRGBO(200, 200, 200, 0.3),

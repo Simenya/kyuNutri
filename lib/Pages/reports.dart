@@ -56,64 +56,68 @@ class Reports extends StatelessWidget {
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    color: Colors.white,
-                                  ),
+                                      borderRadius: BorderRadius.circular(20.0),
+                                      // color: Colors.white,
+                                      image: const DecorationImage(
+                                          image: AssetImage("assets/first.png"),
+                                          fit: BoxFit.cover)),
                                 ),
-                                Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                      // color: Colors.black,
+                                SafeArea(
+                                    child: GridView.count(
+                                  mainAxisSpacing: 20.0,
+                                  crossAxisCount: 1,
+                                  childAspectRatio: 1 / 0.75,
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                          // color: Colors.white,
+                                          image: const DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/second.png"),
+                                              fit: BoxFit.cover)),
                                     ),
-                                    child: Expanded(
-                                        child: GridView.count(
-                                      mainAxisSpacing: 20.0,
-                                      crossAxisCount: 1,
-                                      childAspectRatio: 1 / 0.75,
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ],
-                                    ))),
-                                Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                      // color: Colors.black,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                          // color: Colors.white,
+                                          image: const DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/third.png"),
+                                              fit: BoxFit.cover)),
                                     ),
-                                    child: Expanded(
-                                        child: GridView.count(
-                                      mainAxisSpacing: 20.0,
-                                      crossAxisCount: 1,
-                                      childAspectRatio: 1 / 0.75,
-                                      children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ],
-                                    ))),
+                                  ],
+                                )),
+                                SafeArea(
+                                    child: GridView.count(
+                                  mainAxisSpacing: 20.0,
+                                  crossAxisCount: 1,
+                                  childAspectRatio: 1 / 0.75,
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                          // color: Colors.white,
+                                          image: const DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/fourth.png"),
+                                              fit: BoxFit.cover)),
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                          // color: Colors.white,
+                                          image: const DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/fifth.png"),
+                                              fit: BoxFit.cover)),
+                                    ),
+                                  ],
+                                )),
                               ],
                             ),
                           )

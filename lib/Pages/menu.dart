@@ -48,11 +48,29 @@ class _MenuState extends State<Menu> {
                     borderRadius: BorderRadius.circular(20.0),
                     color: Colors.white,
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.white,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 160.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            // color: Colors.white,
+                            image: const DecorationImage(
+                                image: AssetImage("assets/edible.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40.0, vertical: 5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Pillau"),
+                            Text("\$1"),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 ),
                 Container(
@@ -60,11 +78,29 @@ class _MenuState extends State<Menu> {
                     borderRadius: BorderRadius.circular(20.0),
                     color: Colors.white,
                   ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.white,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 160.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            // color: Colors.white,
+                            image: const DecorationImage(
+                                image: AssetImage("assets/edible.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40.0, vertical: 5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Pillau"),
+                            Text("\$1"),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 ),
                 Container(
@@ -72,11 +108,119 @@ class _MenuState extends State<Menu> {
                     borderRadius: BorderRadius.circular(20.0),
                     color: Colors.white,
                   ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 160.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            // color: Colors.white,
+                            image: const DecorationImage(
+                                image: AssetImage("assets/edible.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40.0, vertical: 5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Pillau"),
+                            Text("\$1"),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
                     color: Colors.white,
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 160.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            // color: Colors.white,
+                            image: const DecorationImage(
+                                image: AssetImage("assets/edible.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40.0, vertical: 5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Pillau"),
+                            Text("\$1"),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 160.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            // color: Colors.white,
+                            image: const DecorationImage(
+                                image: AssetImage("assets/edible.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40.0, vertical: 5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Pillau"),
+                            Text("\$1"),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 160.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            // color: Colors.white,
+                            image: const DecorationImage(
+                                image: AssetImage("assets/edible.png"),
+                                fit: BoxFit.cover)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40.0, vertical: 5.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text("Pillau"),
+                            Text("\$1"),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ],

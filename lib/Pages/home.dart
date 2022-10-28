@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // Getting the height and width of the screen
@@ -22,7 +27,7 @@ class Home extends StatelessWidget {
             )),
       ),
       Center(
-        child: Container(
+        child: SizedBox(
           // color: const Color.fromRGBO(255, 255, 255, 1),
           height: height - 200,
           width: width - 200,

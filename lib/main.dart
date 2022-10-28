@@ -4,8 +4,8 @@ import './Sign/signup.dart';
 import 'frame.dart';
 
 void main() => runApp(MaterialApp(
-        debugShowCheckedModeBanner: true,
-        initialRoute: '/frame',
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
         routes: {
           '/frame': (context) => const Frame(),
           '/': (context) => const Login(),

@@ -46,13 +46,13 @@ class Reports extends StatelessWidget {
                                   )),
                             ],
                           ),
-                          const SizedBox(height: 30.0),
+                          const SizedBox(height: 20.0),
                           // The grid view for cards
                           Expanded(
                             child: GridView.count(
                               crossAxisSpacing: 20.0,
                               crossAxisCount: 3,
-                              childAspectRatio: 1 / 1.7,
+                              childAspectRatio: 1 / 1.6,
                               children: [
                                 Container(
                                   decoration: BoxDecoration(
@@ -69,7 +69,7 @@ class Reports extends StatelessWidget {
                                         child: GridView.count(
                                       mainAxisSpacing: 20.0,
                                       crossAxisCount: 1,
-                                      childAspectRatio: 1 / 0.8,
+                                      childAspectRatio: 1 / 0.75,
                                       children: [
                                         Container(
                                           decoration: BoxDecoration(
@@ -96,7 +96,7 @@ class Reports extends StatelessWidget {
                                         child: GridView.count(
                                       mainAxisSpacing: 20.0,
                                       crossAxisCount: 1,
-                                      childAspectRatio: 1 / 0.8,
+                                      childAspectRatio: 1 / 0.75,
                                       children: [
                                         Container(
                                           decoration: BoxDecoration(

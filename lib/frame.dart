@@ -5,9 +5,14 @@ import 'Pages/menu.dart';
 import 'Pages/reports.dart';
 import 'Pages/about.dart';
 
-class Frame extends StatelessWidget {
+class Frame extends StatefulWidget {
   const Frame({super.key});
 
+  @override
+  State<Frame> createState() => _FrameState();
+}
+
+class _FrameState extends State<Frame> {
   @override
   Widget build(BuildContext context) {
     const screens = [Home(), Menu(), Reports(), About()];

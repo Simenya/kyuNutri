@@ -21,7 +21,7 @@ class _AboutState extends State<About> {
           width: 800.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
-            color: const Color.fromRGBO(200, 200, 200, 0.8),
+            color: const Color.fromRGBO(0, 0, 0, 0.4),
           ),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(30, 100, 30, 30),
@@ -32,14 +32,14 @@ class _AboutState extends State<About> {
                   children: [
                     const CircleAvatar(
                         radius: 140.0,
-                        backgroundColor: Colors.white24,
+                        backgroundColor: Color.fromRGBO(0, 0, 0, 0),
                         backgroundImage: AssetImage('assets/dishes-5.png')),
                     Column(children: const [
                       Text("Cafe Mgt Sys",
                           style: TextStyle(
                             decoration: TextDecoration.none,
                             fontSize: 40.0,
-                            color: Colors.black,
+                            color: Color.fromRGBO(20, 255, 10, 1),
                           )),
                       SizedBox(height: 10.0),
                       SizedBox(
@@ -48,10 +48,10 @@ class _AboutState extends State<About> {
                         child: Text(
                             "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis illum minima magni laudantium error, repellat dolores inventore perspiciatis dolorem blanditiis saepe, architecto eaque iure a rerum provident nostrum necessitatibus corporis.",
                             style: TextStyle(
-                              decoration: TextDecoration.none,
-                              fontSize: 20.0,
-                              color: Colors.black,
-                            )),
+                                decoration: TextDecoration.none,
+                                fontSize: 20.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w100)),
                       ),
                     ])
                   ],
@@ -64,7 +64,7 @@ class _AboutState extends State<About> {
                         style: TextStyle(
                           decoration: TextDecoration.none,
                           fontSize: 20.0,
-                          color: Colors.black,
+                          color: Color.fromRGBO(20, 255, 10, 1),
                         )),
                     Text("License",
                         style: TextStyle(

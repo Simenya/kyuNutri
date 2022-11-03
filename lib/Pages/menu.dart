@@ -29,7 +29,7 @@ class _MenuState extends State<Menu> {
         ),
         Center(
             child: Container(
-          height: height - 200,
+          height: height - 180,
           width: width - 200,
           padding: const EdgeInsets.all(30.0),
           decoration: BoxDecoration(
@@ -52,10 +52,12 @@ class _MenuState extends State<Menu> {
                     children: [
                       Container(
                         height: 160.0,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.0),
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20)),
                             // color: Colors.white,
-                            image: const DecorationImage(
+                            image: DecorationImage(
                                 image: AssetImage("assets/edible.png"),
                                 fit: BoxFit.cover)),
                       ),
@@ -82,10 +84,12 @@ class _MenuState extends State<Menu> {
                     children: [
                       Container(
                         height: 160.0,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.0),
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20)),
                             // color: Colors.white,
-                            image: const DecorationImage(
+                            image: DecorationImage(
                                 image: AssetImage("assets/edible.png"),
                                 fit: BoxFit.cover)),
                       ),
@@ -112,10 +116,12 @@ class _MenuState extends State<Menu> {
                     children: [
                       Container(
                         height: 160.0,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.0),
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20)),
                             // color: Colors.white,
-                            image: const DecorationImage(
+                            image: DecorationImage(
                                 image: AssetImage("assets/edible.png"),
                                 fit: BoxFit.cover)),
                       ),
@@ -142,10 +148,12 @@ class _MenuState extends State<Menu> {
                     children: [
                       Container(
                         height: 160.0,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.0),
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20)),
                             // color: Colors.white,
-                            image: const DecorationImage(
+                            image: DecorationImage(
                                 image: AssetImage("assets/edible.png"),
                                 fit: BoxFit.cover)),
                       ),
@@ -172,10 +180,12 @@ class _MenuState extends State<Menu> {
                     children: [
                       Container(
                         height: 160.0,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.0),
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20)),
                             // color: Colors.white,
-                            image: const DecorationImage(
+                            image: DecorationImage(
                                 image: AssetImage("assets/edible.png"),
                                 fit: BoxFit.cover)),
                       ),
@@ -202,10 +212,12 @@ class _MenuState extends State<Menu> {
                     children: [
                       Container(
                         height: 160.0,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.0),
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20)),
                             // color: Colors.white,
-                            image: const DecorationImage(
+                            image: DecorationImage(
                                 image: AssetImage("assets/edible.png"),
                                 fit: BoxFit.cover)),
                       ),

@@ -13,14 +13,14 @@ class Signup extends StatelessWidget {
                   image: AssetImage("assets/first.jpg"), fit: BoxFit.cover)),
           child: Center(
               child: Container(
-            height: 700.0,
+            height: 600.0,
             width: 500.0,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.0),
-              color: const Color.fromRGBO(200, 200, 200, 0.3),
+              color: const Color.fromRGBO(50, 50, 50, 0.5),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 80.0),
+              padding: const EdgeInsets.fromLTRB(80, 20, 80, 20),
               child: Column(
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -158,7 +158,7 @@ class Signup extends StatelessWidget {
                                       const Color.fromRGBO(255, 180, 0, 1),
                                 ),
                                 onPressed: () {},
-                                child: const Text('SIGN IN')),
+                                child: const Text('SIGN UP')),
                           ),
                           const SizedBox(height: 10),
 

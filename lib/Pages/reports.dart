@@ -19,7 +19,7 @@ class Reports extends StatelessWidget {
                   width: 810.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
-                    color: const Color.fromRGBO(20, 20, 20, 0.8),
+                    color: const Color.fromRGBO(0, 0, 0, 0.4),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(

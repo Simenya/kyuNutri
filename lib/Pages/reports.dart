@@ -38,12 +38,13 @@ class Reports extends StatelessWidget {
                                     color: Color.fromRGBO(255, 180, 0, 1),
                                   )),
                               SizedBox(width: 30.0),
-                              Text("Monthly",
-                                  style: TextStyle(
-                                    decoration: TextDecoration.none,
-                                    fontSize: 20.0,
-                                    color: Colors.white,
-                                  )),
+                              DropDown(),
+                              // Text("Monthly",
+                              //     style: TextStyle(
+                              //       decoration: TextDecoration.none,
+                              //       fontSize: 20.0,
+                              //       color: Colors.white,
+                              //     )),
                             ],
                           ),
                           const SizedBox(height: 20.0),
@@ -124,5 +125,46 @@ class Reports extends StatelessWidget {
                         ]),
                   ))),
         ));
+  }
+}
+
+class DropDown extends StatefulWidget {
+  const DropDown({super.key});
+
+  @override
+  State<DropDown> createState() => _DropDownState();
+}
+
+class _DropDownState extends State<DropDown> {
+  int selectedValue = 1;
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton(
+        dropdownColor: Colors.amberAccent,
+        value: selectedValue,
+        items: const [
+          // The order of arrangement matters in such a way to reduce errors
+          DropdownMenuItem(
+              value: 1,
+              child: Text(
+                'Daily',
+                style: TextStyle(color: Colors.white, fontSize: 22.0),
+              )),
+          DropdownMenuItem(
+            value: 2,
+            child: Text('Weekly',
+                style: TextStyle(color: Colors.white, fontSize: 22.0)),
+          ),
+          DropdownMenuItem(
+            value: 3,
+            child: Text('Monthly',
+                style: TextStyle(color: Colors.white, fontSize: 22.0)),
+          ),
+        ],
+        onChanged: (value) {
+          setState(() {
+            selectedValue = value as int;
+          });
+        });
   }
 }

@@ -163,6 +163,7 @@ class _DropDownState extends State<DropDown> {
         ],
         onChanged: (value) {
           setState(() {
+            // type casting the to integer
             selectedValue = value as int;
           });
         });

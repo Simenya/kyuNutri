@@ -4,6 +4,7 @@ import 'Pages/home.dart';
 import 'Pages/menu.dart';
 import 'Pages/reports.dart';
 import 'Pages/about.dart';
+import 'Pages/purchases.dart';
 
 int k = 0;
 
@@ -17,9 +18,9 @@ class Frame extends StatefulWidget {
 class _FrameState extends State<Frame> {
   @override
   Widget build(BuildContext context) {
-    const screens = [Home(), Menu(), Reports(), About()];
+    const screens = [Home(), Menu(), Reports(), About(), Purchase()];
     var screenSize = MediaQuery.of(context).size.width;
-    final List hoverings = [true, false, false, false];
+    final List hoverings = [true, false, false, false, false];
     return Material(
       child: Stack(
         children: [
@@ -92,6 +93,20 @@ class _FrameState extends State<Frame> {
                           },
                           child: Column(children: const [
                             Text('About', style: TextStyle(fontSize: 20.0))
+                          ]),
+                        ),
+                        const SizedBox(width: 20),
+                        InkWell(
+                          onHover: (value) => {
+                            value ? hoverings[3] = true : hoverings[3] = false,
+                          },
+                          onTap: () {
+                            setState(() {
+                              k = 4;
+                            });
+                          },
+                          child: Column(children: const [
+                            Text('Purchases', style: TextStyle(fontSize: 20.0))
                           ]),
                         ),
                       ],

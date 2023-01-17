@@ -7,6 +7,7 @@ class BuyFields {
   static const String price = 'price';
   static const String quantity = 'quantity';
   static const String purchasetime = 'purchasetime';
+  static const String waiter = 'waiter';
 }
 
 class Buy {
@@ -15,6 +16,7 @@ class Buy {
   final double price;
   final int quantity;
   final DateTime purchasetime;
+  final String waiter;
 
   // Buyer constructor
   const Buy({
@@ -23,5 +25,6 @@ class Buy {
     required this.price,
     required this.quantity,
     required this.purchasetime,
+    required this.waiter,
   });
 }

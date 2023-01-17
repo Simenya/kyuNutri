@@ -41,23 +41,35 @@ class _PurchaseState extends State<Purchase> {
             borderRadius: BorderRadius.circular(20.0),
             color: const Color.fromRGBO(0, 0, 0, 0.5),
           ),
-          child: SingleChildScrollView(
-            child: PaginatedDataTable(
-              columns: const [
-                DataColumn(label: Text('ID')),
-                DataColumn(label: Text('NAME')),
-                DataColumn(label: Text('PRICE')),
-                DataColumn(label: Text('EDIT')),
-                DataColumn(label: Text('DELETE')),
-              ],
-              source: _data,
-              // columnSpacing: 100,
-              horizontalMargin: 40,
-              rowsPerPage: 6,
-            ),
-            // )
-            //   ],
-            // ),
+          child: Column(
+            children: [
+              const Text("PURCHASES",
+                  style: TextStyle(
+                      fontSize: 30.0,
+                      color: Colors.amber,
+                      fontFamily: "Arial")),
+              const SizedBox(
+                height: 20.0,
+              ),
+              SingleChildScrollView(
+                child: PaginatedDataTable(
+                  columns: const [
+                    DataColumn(label: Text('ID')),
+                    DataColumn(label: Text('NAME')),
+                    DataColumn(label: Text('PRICE')),
+                    DataColumn(label: Text('EDIT')),
+                    DataColumn(label: Text('DELETE')),
+                  ],
+                  source: _data,
+                  // columnSpacing: 100,
+                  horizontalMargin: 40,
+                  rowsPerPage: 5,
+                ),
+                // )
+                //   ],
+                // ),
+              ),
+            ],
           ),
         ))
       ]),
@@ -77,7 +89,7 @@ class MyData extends DataTableSource {
           });
   @override
   DataRow? getRow(int index) {
-    // TODO: implement getRow
+    // MyData implement getRow
     return DataRow(cells: [
       DataCell(Text(_data[index]['id'].toString())),
       DataCell(Text(_data[index]['title'])),
@@ -88,15 +100,15 @@ class MyData extends DataTableSource {
   }
 
   @override
-  // TODO: implement isRowCountApproximate
+  // MyData implement isRowCountApproximate
   bool get isRowCountApproximate => false;
 
   @override
-  // TODO: implement rowCount
+  // MyData implement rowCount
   int get rowCount => _data.length;
 
   @override
-  // TODO: implement selectedRowCount
+  // MyData: implement selectedRowCount
   int get selectedRowCount => 0;
 }
 

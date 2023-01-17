@@ -18,7 +18,7 @@ class Frame extends StatefulWidget {
 class _FrameState extends State<Frame> {
   @override
   Widget build(BuildContext context) {
-    const screens = [Home(), Menu(), Reports(), About(), Purchase()];
+    const screens = [Home(), Menu(), Reports(), Purchase(), About()];
     var screenSize = MediaQuery.of(context).size.width;
     final List hoverings = [true, false, false, false, false];
     return Material(
@@ -92,13 +92,13 @@ class _FrameState extends State<Frame> {
                             });
                           },
                           child: Column(children: const [
-                            Text('About', style: TextStyle(fontSize: 20.0))
+                            Text('Purchases', style: TextStyle(fontSize: 20.0))
                           ]),
                         ),
                         const SizedBox(width: 20),
                         InkWell(
                           onHover: (value) => {
-                            value ? hoverings[3] = true : hoverings[3] = false,
+                            value ? hoverings[4] = true : hoverings[4] = false,
                           },
                           onTap: () {
                             setState(() {
@@ -106,7 +106,7 @@ class _FrameState extends State<Frame> {
                             });
                           },
                           child: Column(children: const [
-                            Text('Purchases', style: TextStyle(fontSize: 20.0))
+                            Text('About', style: TextStyle(fontSize: 20.0))
                           ]),
                         ),
                       ],

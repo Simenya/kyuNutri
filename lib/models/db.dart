@@ -1,5 +1,8 @@
-import 'package:path/path.dart';
+import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
+import 'usermodel.dart';
+import 'buyer.dart';
+import 'dishes_model.dart';
 
 class FoodHub {
   // inializing the class
@@ -23,12 +26,53 @@ class FoodHub {
   // Initializing the database
   Future<Database> _initDB(String filePath) async {
     final dbPath = await getDatabasesPath();
-    final path = join(dbPath, filePath);
+    final path = p.join(dbPath, filePath);
     return await openDatabase(path, version: 1, onCreate: _createDB);
   }
 
   // createDB
-  Future _createDB(Database db, int version) async {}
+  Future _createDB(Database db, int version) async {
+    // table creation goes in here
+    const idType = 'INTEGER PRIMARY KEY AUTO_INCREMENT';
+    const textType = 'TEXT NOT NULL';
+    // const boolType = 'BOOLEAN NOT NULL';
+    // const integerType = 'INTEGER NOT NULL';
+
+    // Users table
+    await db.execute('''
+        CREATE TABLE $usertable(
+          ${UserFields.id} $idType,
+          ${UserFields.username} $textType,
+          ${UserFields.email} $textType,
+          ${UserFields.password} $textType,
+          ${UserFields.timecreated} $textType,
+        )
+
+    ''');
+    // Buyers table
+    await db.execute('''
+        CREATE TABLE $buy(
+          ${BuyFields.id} $idType,
+          ${BuyFields.dishname} $textType,
+          ${BuyFields.price} $textType,
+          ${BuyFields.quantity} $textType,
+          ${BuyFields.waiter} $textType,
+          ${BuyFields.purchasetime} $textType,
+        )
+
+    ''');
+
+    // Dishes table
+    await db.execute('''
+        CREATE TABLE $dish(
+          ${DishFields.id} $idType,
+          ${DishFields.dishname} $textType,
+          ${DishFields.price} $textType,
+          ${DishFields.timecreated} $textType,
+        )
+
+    ''');
+  }
 
   // Closing a database
   Future close() async {

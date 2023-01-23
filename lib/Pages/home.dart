@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/addmenu.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -106,7 +107,12 @@ class _HomeState extends State<Home> {
                                         backgroundColor: const Color.fromRGBO(
                                             255, 180, 0, 1),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () =>showDialog(
+                                        context: context,
+                                        builder: (context) => const AddToMenu(
+                                          // onClickedDone: addTransaction,
+                                        ),
+                                      ),
                                       child: const Text(
                                         'Create Daily Menu',
                                         style: TextStyle(fontSize: 23.0),

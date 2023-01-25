@@ -49,13 +49,26 @@ class _UserState extends State<User> {
                       color: Colors.amber,
                       fontFamily: "Arial")),
               const SizedBox(
-                height: 20.0,
+                height: 10.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                      onPressed: () {},
+                      child: const Icon(
+                        Icons.add,
+                        size: 30.0,
+                      ))
+                ],
               ),
               SingleChildScrollView(
                 child: PaginatedDataTable(
                   columns: const [
-                    DataColumn(label: Text('EMAIL')),
+                    DataColumn(label: Text('ID')),
                     DataColumn(label: Text('USERNAME')),
+                    DataColumn(label: Text('EMAIL')),
+                    DataColumn(label: Text('CONTACT')),
                     DataColumn(label: Text('PASSWORD')),
                     DataColumn(label: Text('EDIT')),
                     DataColumn(label: Text('DELETE')),
@@ -63,7 +76,7 @@ class _UserState extends State<User> {
                   source: _data,
                   // columnSpacing: 100,
                   horizontalMargin: 40,
-                  rowsPerPage: 10,
+                  rowsPerPage: 5,
                 ),
                 // )
                 //   ],
@@ -82,8 +95,10 @@ class MyData extends DataTableSource {
       200,
       (index) => {
             "id": index,
-            "title": "Item $index",
-            "price": Random().nextInt(10000),
+            "username": "John $index",
+            "email": "johndoe@gmail.com",
+            "contact": "+256700000000",
+            "password": Random().nextInt(10000),
             "edit": index,
             "delete": index,
           });
@@ -92,10 +107,12 @@ class MyData extends DataTableSource {
     // MyData implement getRow
     return DataRow(cells: [
       DataCell(Text(_data[index]['id'].toString())),
-      DataCell(Text(_data[index]['title'])),
-      DataCell(Text(_data[index]['price'].toString())),
-      const DataCell(Text("Edit")),
-      const DataCell(Text("Delete")),
+      DataCell(Text(_data[index]['username'])),
+      DataCell(Text(_data[index]['email'])),
+      DataCell(Text(_data[index]['contact'])),
+      DataCell(Text(_data[index]['password'].toString())),
+      DataCell(buildEditButton()),
+      DataCell(buildDeleteButton()),
     ]);
   }
 
@@ -110,6 +127,19 @@ class MyData extends DataTableSource {
   @override
   // MyData: implement selectedRowCount
   int get selectedRowCount => 0;
+  Widget buildEditButton() {
+    return TextButton(
+      child: const Text("Edit"),
+      onPressed: () {},
+    );
+  }
+
+  Widget buildDeleteButton() {
+    return TextButton(
+      child: const Text("Delete", style: TextStyle(color: Colors.redAccent)),
+      onPressed: () {},
+    );
+  }
 }
 
 class MyClipPath extends CustomClipper<Path> {

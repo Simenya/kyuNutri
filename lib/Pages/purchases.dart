@@ -49,7 +49,18 @@ class _PurchaseState extends State<Purchase> {
                       color: Colors.amber,
                       fontFamily: "Arial")),
               const SizedBox(
-                height: 20.0,
+                height: 10.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                      onPressed: () {},
+                      child: const Icon(
+                        Icons.add,
+                        size: 30.0,
+                      ))
+                ],
               ),
               SingleChildScrollView(
                 child: PaginatedDataTable(
@@ -57,8 +68,8 @@ class _PurchaseState extends State<Purchase> {
                     DataColumn(label: Text('ID')),
                     DataColumn(label: Text('NAME')),
                     DataColumn(label: Text('PRICE')),
+                    DataColumn(label: Text('PURCHASE DATE')),
                     DataColumn(label: Text('EDIT')),
-                    DataColumn(label: Text('DELETE')),
                   ],
                   source: _data,
                   // columnSpacing: 100,
@@ -84,8 +95,10 @@ class MyData extends DataTableSource {
             "id": index,
             "title": "Item $index",
             "price": Random().nextInt(10000),
+
+            "date_created": index,
+            // Cater for the index during the deletion
             "edit": index,
-            "delete": index,
           });
   @override
   DataRow? getRow(int index) {
@@ -94,8 +107,8 @@ class MyData extends DataTableSource {
       DataCell(Text(_data[index]['id'].toString())),
       DataCell(Text(_data[index]['title'])),
       DataCell(Text(_data[index]['price'].toString())),
-      const DataCell(Text("Edit")),
-      const DataCell(Text("Delete")),
+      DataCell(Text(_data[index]['date_created'].toString())),
+      DataCell(buildEditButton()),
     ]);
   }
 
@@ -110,6 +123,12 @@ class MyData extends DataTableSource {
   @override
   // MyData: implement selectedRowCount
   int get selectedRowCount => 0;
+  Widget buildEditButton() {
+    return TextButton(
+      child: const Text("Edit"),
+      onPressed: () {},
+    );
+  }
 }
 
 class MyClipPath extends CustomClipper<Path> {

@@ -36,7 +36,7 @@ class FoodHub {
     const idType = 'INTEGER PRIMARY KEY AUTO_INCREMENT';
     const textType = 'TEXT NOT NULL';
     // const boolType = 'BOOLEAN NOT NULL';
-    // const integerType = 'INTEGER NOT NULL';
+    const doubleType = 'DOUBLE NOT NULL';
 
     // Users table
     await db.execute('''
@@ -54,7 +54,7 @@ class FoodHub {
         CREATE TABLE $buy(
           ${BuyFields.id} $idType,
           ${BuyFields.dishname} $textType,
-          ${BuyFields.price} $textType,
+          ${BuyFields.price} $doubleType,
           ${BuyFields.quantity} $textType,
           ${BuyFields.waiter} $textType,
           ${BuyFields.purchasetime} $textType,
@@ -67,7 +67,7 @@ class FoodHub {
         CREATE TABLE $dish(
           ${DishFields.id} $idType,
           ${DishFields.dishname} $textType,
-          ${DishFields.price} $textType,
+          ${DishFields.price} $doubleType,
           ${DishFields.timecreated} $textType,
         )
 

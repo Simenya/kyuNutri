@@ -63,7 +63,7 @@ class _UserState extends State<User> {
                   source: _data,
                   // columnSpacing: 100,
                   horizontalMargin: 40,
-                  rowsPerPage: 5,
+                  rowsPerPage: 10,
                 ),
                 // )
                 //   ],

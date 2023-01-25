@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/addmenu.dart';
 
 String image = "assets/edible.png";
 String price = "1\$";
@@ -63,35 +64,44 @@ class Mealcard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
-        color: Colors.white,
-      ),
-      child: Column(
-        children: [
-          Container(
-            height: 160.0,
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)),
-                // color: Colors.white,
-                image: DecorationImage(
-                    image: AssetImage("assets/edible.png"), fit: BoxFit.cover)),
-          ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text("Pillau"),
-                Text("\$1"),
-              ],
+    return InkWell(
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.white,
+        ),
+        child: Column(
+          children: [
+            Container(
+              height: 160.0,
+              decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20)),
+                  // color: Colors.white,
+                  image: DecorationImage(
+                      image: AssetImage("assets/edible.png"),
+                      fit: BoxFit.cover)),
             ),
-          )
-        ],
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 40.0, vertical: 5.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text("Pillau"),
+                  Text("\$1"),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+      onTap: () => showDialog(
+        context: context,
+        builder: (context) => const AddToMenu(
+            // onClickedDone: addTransaction,
+            ),
       ),
     );
   }

@@ -107,14 +107,14 @@ class _HomeState extends State<Home> {
                                         backgroundColor: const Color.fromRGBO(
                                             255, 180, 0, 1),
                                       ),
-                                      onPressed: () =>showDialog(
-                                        context: context,
-                                        builder: (context) => const AddToMenu(
-                                          // onClickedDone: addTransaction,
-                                        ),
-                                      ),
+                                      onPressed: () => showDialog(
+                                            context: context,
+                                            builder: (context) => const AddToMenu(
+                                                // onClickedDone: addTransaction,
+                                                ),
+                                          ),
                                       child: const Text(
-                                        'Create Daily Menu',
+                                        'Add New Meal',
                                         style: TextStyle(fontSize: 23.0),
                                       )),
                                 ),

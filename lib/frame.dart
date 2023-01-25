@@ -19,7 +19,7 @@ class Frame extends StatefulWidget {
 class _FrameState extends State<Frame> {
   @override
   Widget build(BuildContext context) {
-    const screens = [Home(), Menu(), Reports(), Purchase(), User(), About()];
+    const screens = [Home(), Menu(), Purchase(), Reports(), User(), About()];
     var screenSize = MediaQuery.of(context).size.width;
     final List hoverings = [true, false, false, false, false, false];
     return Material(
@@ -79,7 +79,7 @@ class _FrameState extends State<Frame> {
                             });
                           },
                           child: Column(children: const [
-                            Text('Reports', style: TextStyle(fontSize: 20.0))
+                            Text('Purchases', style: TextStyle(fontSize: 20.0))
                           ]),
                         ),
                         const SizedBox(width: 20),
@@ -93,7 +93,7 @@ class _FrameState extends State<Frame> {
                             });
                           },
                           child: Column(children: const [
-                            Text('Purchases', style: TextStyle(fontSize: 20.0))
+                            Text('Reports', style: TextStyle(fontSize: 20.0))
                           ]),
                         ),
                         const SizedBox(width: 20),

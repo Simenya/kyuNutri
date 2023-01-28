@@ -62,25 +62,27 @@ class _UserState extends State<User> {
                       ))
                 ],
               ),
-              SingleChildScrollView(
-                child: PaginatedDataTable(
-                  columns: const [
-                    DataColumn(label: Text('ID')),
-                    DataColumn(label: Text('USERNAME')),
-                    DataColumn(label: Text('EMAIL')),
-                    DataColumn(label: Text('CONTACT')),
-                    DataColumn(label: Text('PASSWORD')),
-                    DataColumn(label: Text('EDIT')),
-                    DataColumn(label: Text('DELETE')),
-                  ],
-                  source: _data,
-                  // columnSpacing: 100,
-                  horizontalMargin: 40,
-                  rowsPerPage: 5,
+              Expanded(
+                child: SizedBox.expand(
+                  child: PaginatedDataTable(
+                    columns: const [
+                      DataColumn(label: Text('ID')),
+                      DataColumn(label: Text('USERNAME')),
+                      DataColumn(label: Text('EMAIL')),
+                      DataColumn(label: Text('CONTACT')),
+                      DataColumn(label: Text('PASSWORD')),
+                      DataColumn(label: Text('EDIT')),
+                      DataColumn(label: Text('DELETE')),
+                    ],
+                    source: _data,
+                    // columnSpacing: 100,
+                    horizontalMargin: 40,
+                    rowsPerPage: 5,
+                  ),
+                  // )
+                  //   ],
+                  // ),
                 ),
-                // )
-                //   ],
-                // ),
               ),
             ],
           ),
@@ -92,7 +94,7 @@ class _UserState extends State<User> {
 
 class MyData extends DataTableSource {
   final List<Map<String, dynamic>> _data = List.generate(
-      200,
+      5,
       (index) => {
             "id": index,
             "username": "John $index",

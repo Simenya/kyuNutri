@@ -62,19 +62,21 @@ class _PurchaseState extends State<Purchase> {
                       ))
                 ],
               ),
-              SingleChildScrollView(
-                child: PaginatedDataTable(
-                  columns: const [
-                    DataColumn(label: Text('ID')),
-                    DataColumn(label: Text('NAME')),
-                    DataColumn(label: Text('PRICE')),
-                    DataColumn(label: Text('PURCHASE DATE')),
-                    DataColumn(label: Text('EDIT')),
-                  ],
-                  source: _data,
-                  // columnSpacing: 100,
-                  horizontalMargin: 40,
-                  rowsPerPage: 5,
+              Expanded(
+                child: SizedBox.expand(
+                  child: PaginatedDataTable(
+                    columns: const [
+                      DataColumn(label: Text('ID')),
+                      DataColumn(label: Text('NAME')),
+                      DataColumn(label: Text('PRICE')),
+                      DataColumn(label: Text('PURCHASE DATE')),
+                      DataColumn(label: Text('EDIT')),
+                    ],
+                    source: _data,
+                    // columnSpacing: 100,
+                    horizontalMargin: 40,
+                    rowsPerPage: 5,
+                  ),
                 ),
                 // )
                 //   ],

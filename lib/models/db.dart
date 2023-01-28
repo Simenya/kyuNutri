@@ -34,6 +34,7 @@ class FoodHub {
   Future _createDB(Database db, int version) async {
     // table creation goes in here
     const idType = 'INTEGER PRIMARY KEY AUTO_INCREMENT';
+    const intType = 'INTEGER';
     const textType = 'TEXT NOT NULL';
     // const boolType = 'BOOLEAN NOT NULL';
     const doubleType = 'DOUBLE NOT NULL';
@@ -49,29 +50,32 @@ class FoodHub {
         )
 
     ''');
-    // Buyers table
-    await db.execute('''
-        CREATE TABLE $buy(
-          ${BuyFields.id} $idType,
-          ${BuyFields.dishname} $textType,
-          ${BuyFields.price} $doubleType,
-          ${BuyFields.quantity} $textType,
-          ${BuyFields.waiter} $textType,
-          ${BuyFields.purchasetime} $textType,
-        )
-
-    ''');
-
-    // Dishes table
     await db.execute('''
         CREATE TABLE $dish(
           ${DishFields.id} $idType,
           ${DishFields.dishname} $textType,
           ${DishFields.price} $doubleType,
+          ${DishFields.createdby} $intType,
           ${DishFields.timecreated} $textType,
+          FOREIGN KEY (${DishFields.createdby}) REFERNCES $usertable (${UserFields.id}) ON DELETE NO ACTION ON UPDATE NO ACTION,
         )
 
     ''');
+    // Buyers table
+    await db.execute('''
+        CREATE TABLE $buy(
+          ${BuyFields.id} $idType,
+          ${BuyFields.dishname} $intType,
+          ${BuyFields.quantity} $textType,
+          ${BuyFields.waiter} $intType,
+          ${BuyFields.purchasetime} $textType,
+          FOREIGN KEY (${BuyFields.waiter}) REFERNCES $usertable (${UserFields.id}) ON DELETE NO ACTION ON UPDATE NO ACTION,
+          FOREIGN KEY (${BuyFields.dishname}) REFERNCES $dish ($DishFields.id}) ON DELETE NO ACTION ON UPDATE NO ACTION
+        )
+
+    ''');
+
+    // Dishes table
   }
 
   // Closing a database

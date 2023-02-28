@@ -44,10 +44,10 @@ class _MenuState extends State<Menu> {
             child: GridView.count(
               crossAxisSpacing: 20.0,
               mainAxisSpacing: 20.0,
-              crossAxisCount: 3,
+              crossAxisCount: 4,
               childAspectRatio: 1 / 0.64,
               children: [
-                for (int k = 0; k < 6; k++) const Mealcard(),
+                for (int k = 0; k < 16; k++) const Mealcard(),
               ],
             ),
           ),
@@ -73,7 +73,7 @@ class Mealcard extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 160.0,
+              height: 138.0,
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),

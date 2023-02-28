@@ -1,36 +1,49 @@
 import 'package:flutter/material.dart';
 
-class AddToMenu extends StatefulWidget {
-  const AddToMenu({super.key});
+class PurchaseNow extends StatefulWidget {
+  const PurchaseNow({super.key});
 
   @override
-  State<AddToMenu> createState() => _AddToMenuState();
+  State<PurchaseNow> createState() => _PurchaseNowState();
 }
 
-class _AddToMenuState extends State<AddToMenu> {
-  final formkey1 = GlobalKey<FormState>();
+class _PurchaseNowState extends State<PurchaseNow> {
+  final formkey2 = GlobalKey<FormState>();
   final dishNameController = TextEditingController();
   final amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text("Add Food to Menu",
-          style: TextStyle(color: Colors.amberAccent)),
+      title: const Text("Buying", style: TextStyle(color: Colors.amberAccent)),
       content: Form(
-        key: formkey1,
+        key: formkey2,
         child: SingleChildScrollView(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+            // mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(width: 8),
+                  buildName(),
+                  const SizedBox(width: 8),
+                  buildAmount(),
+                ],
+              ),
               const SizedBox(height: 8),
-              buildName(),
-              const SizedBox(height: 8),
-              buildAmount(),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  buildName(),
+                  const SizedBox(width: 8),
+                  buildAmount(),
+                ],
+              ),
             ],
           ),
         ),
       ),
-      actions: <Widget>[
+      actions: [
         buildCancelButton(context),
         buildAddButton(context),
       ],
@@ -64,7 +77,7 @@ class _AddToMenuState extends State<AddToMenu> {
       );
   Widget buildAddButton(BuildContext context) {
     return TextButton(
-      child: const Text("Add"),
+      child: const Text("Create"),
       onPressed: () {},
     );
   }

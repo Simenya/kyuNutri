@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import '../widgets/onepurchase.dart';
 import 'dart:math';
+
+// import '../widgets/addpurchase.dart';
 
 String image = "assets/edible.png";
 String price = "1\$";
@@ -54,19 +57,45 @@ class _PurchaseState extends State<Purchase> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  TextButton(
-                      onPressed: () {},
-                      child: const Icon(
-                        Icons.add,
-                        size: 30.0,
-                      ))
+                  SizedBox(
+                    height: 35.0,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ),
+                          backgroundColor: const Color.fromRGBO(255, 180, 0, 1),
+                        ),
+                        onPressed: () => showDialog(
+                              context: context,
+                              builder: (context) => const AddPurchase(
+                                  // onClickedDone: addTransaction,
+                                  ),
+                            ),
+                        child: const Text(
+                          'purchase',
+                          style: TextStyle(fontSize: 23.0),
+                        )),
+                  ),
+                  // TextButton(
+                  //   child: const Icon(
+                  //     Icons.add,
+                  //     size: 30.0,
+                  //   ),
+                  //   onPressed: () => showDialog(
+                  //     context: context,
+                  //     builder: (context) => const PurchaseNow(
+                  //         // onClickedDone: addPurchase,
+                  //         ),
+                  //   ),
+                  // )
                 ],
               ),
               Expanded(
                 child: SizedBox.expand(
                   child: PaginatedDataTable(
                     columns: const [
-                      DataColumn(label: Text('ID')),
+                      DataColumn(label: Text('NUMBER')),
                       DataColumn(label: Text('NAME')),
                       DataColumn(label: Text('PRICE')),
                       DataColumn(label: Text('PURCHASE DATE')),
@@ -94,7 +123,7 @@ class MyData extends DataTableSource {
   final List<Map<String, dynamic>> _data = List.generate(
       200,
       (index) => {
-            "id": index,
+            "id": index + 1,
             "title": "Item $index",
             "price": Random().nextInt(10000),
 

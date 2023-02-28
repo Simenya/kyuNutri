@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AddToMenu extends StatefulWidget {
-  const AddToMenu({super.key});
+class AddPurchase extends StatefulWidget {
+  const AddPurchase({super.key});
 
   @override
-  State<AddToMenu> createState() => _AddToMenuState();
+  State<AddPurchase> createState() => _AddPurchaseState();
 }
 
-class _AddToMenuState extends State<AddToMenu> {
+class _AddPurchaseState extends State<AddPurchase> {
   final formkey1 = GlobalKey<FormState>();
   final dishNameController = TextEditingController();
   final amountController = TextEditingController();

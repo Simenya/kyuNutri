@@ -57,38 +57,19 @@ class _PurchaseState extends State<Purchase> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  SizedBox(
-                    height: 35.0,
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
+                  TextButton(
+                    child: const Icon(
+                      Icons.add,
+                      size: 30.0,
+                      color: Color.fromRGBO(255, 180, 0, 1),
+                    ),
+                    onPressed: () => showDialog(
+                      context: context,
+                      builder: (context) => const AddPurchase(
+                          // onClickedDone: addPurchase,
                           ),
-                          backgroundColor: const Color.fromRGBO(255, 180, 0, 1),
-                        ),
-                        onPressed: () => showDialog(
-                              context: context,
-                              builder: (context) => const AddPurchase(
-                                  // onClickedDone: addTransaction,
-                                  ),
-                            ),
-                        child: const Text(
-                          'purchase',
-                          style: TextStyle(fontSize: 23.0),
-                        )),
-                  ),
-                  // TextButton(
-                  //   child: const Icon(
-                  //     Icons.add,
-                  //     size: 30.0,
-                  //   ),
-                  //   onPressed: () => showDialog(
-                  //     context: context,
-                  //     builder: (context) => const PurchaseNow(
-                  //         // onClickedDone: addPurchase,
-                  //         ),
-                  //   ),
-                  // )
+                    ),
+                  )
                 ],
               ),
               Expanded(

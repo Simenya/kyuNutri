@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Sign/signup.dart';
 import 'dart:math';
 
 String image = "assets/edible.png";
@@ -55,7 +56,12 @@ class _UserState extends State<User> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Signup()));
+                      },
                       child: const Icon(
                         Icons.add,
                         size: 30.0,

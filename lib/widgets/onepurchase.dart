@@ -8,20 +8,24 @@ class AddPurchase extends StatefulWidget {
 }
 
 class _AddPurchaseState extends State<AddPurchase> {
-  final formkey1 = GlobalKey<FormState>();
+  final formkey2 = GlobalKey<FormState>();
   final dishNameController = TextEditingController();
   final amountController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text("Add Food to Menu",
-          style: TextStyle(color: Colors.amberAccent)),
+      title:
+          const Text("Purchase", style: TextStyle(color: Colors.amberAccent)),
       content: Form(
-        key: formkey1,
+        key: formkey2,
         child: SingleChildScrollView(
           child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+            // mainAxisSize: MainAxisSize.min,
+            children: [
+              const SizedBox(height: 8),
+              buildName(),
+              const SizedBox(height: 8),
+              buildAmount(),
               const SizedBox(height: 8),
               buildName(),
               const SizedBox(height: 8),
@@ -41,16 +45,16 @@ class _AddPurchaseState extends State<AddPurchase> {
         controller: dishNameController,
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
-          hintText: 'Enter Name',
+          hintText: 'Dish',
         ),
         validator: (name) =>
-            name != null && name.isEmpty ? 'Enter a name' : null,
+            name != null && name.isEmpty ? 'Choose dish name' : null,
       );
 
   Widget buildAmount() => TextFormField(
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
-          hintText: 'Enter Amount',
+          hintText: 'Amount',
         ),
         keyboardType: TextInputType.number,
         validator: (amount) => amount != null && double.tryParse(amount) == null
@@ -64,7 +68,7 @@ class _AddPurchaseState extends State<AddPurchase> {
       );
   Widget buildAddButton(BuildContext context) {
     return TextButton(
-      child: const Text("Add"),
+      child: const Text("Purchase"),
       onPressed: () {},
     );
   }

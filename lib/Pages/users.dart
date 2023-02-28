@@ -55,6 +55,7 @@ class _UserState extends State<User> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  // Redirects to the page for creating a user
                   TextButton(
                       onPressed: () {
                         Navigator.push(
@@ -119,7 +120,9 @@ class MyData extends DataTableSource {
       DataCell(Text(_data[index]['email'])),
       DataCell(Text(_data[index]['contact'])),
       DataCell(Text(_data[index]['password'].toString())),
-      DataCell(buildEditButton()),
+      DataCell(
+        TextButton(child: const Text("Edit"), onPressed: () {}),
+      ),
       DataCell(buildDeleteButton()),
     ]);
   }
@@ -135,19 +138,11 @@ class MyData extends DataTableSource {
   @override
   // MyData: implement selectedRowCount
   int get selectedRowCount => 0;
-  Widget buildEditButton() {
-    return TextButton(
-      child: const Text("Edit"),
-      onPressed: () {},
-    );
-  }
 
-  Widget buildDeleteButton() {
-    return TextButton(
-      child: const Text("Delete", style: TextStyle(color: Colors.redAccent)),
-      onPressed: () {},
-    );
-  }
+  Widget buildDeleteButton() => TextButton(
+        child: const Text("Delete", style: TextStyle(color: Colors.redAccent)),
+        onPressed: () {},
+      );
 }
 
 class MyClipPath extends CustomClipper<Path> {
